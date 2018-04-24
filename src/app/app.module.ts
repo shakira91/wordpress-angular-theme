@@ -14,11 +14,14 @@ import { WpApiModule, WpApiLoader, WpApiStaticLoader } from 'wp-api-angular';
 import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { PostsComponent } from './posts/posts.component';
+import { SinglePostComponent } from './posts/single-post/single-post.component';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 
 const appRoutes: Routes = [
-{path: '', component: PagesComponent},
-{path: 'posts', component: PostsComponent}
+{path: '', component: FrontPageComponent},
+{path: 'posts', component: PostsComponent},
+{path: 'post/:id', component: SinglePostComponent}
  
 ]
 
@@ -26,7 +29,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PagesComponent,
-    PostsComponent
+    PostsComponent,
+    SinglePostComponent,
+    FrontPageComponent
   ],
   imports: [
     BrowserModule,

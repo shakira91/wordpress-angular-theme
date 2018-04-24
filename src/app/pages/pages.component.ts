@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -8,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private http: HttpClient) { }
 
 
   ngOnInit() {
-   
+    
   }
 
 }

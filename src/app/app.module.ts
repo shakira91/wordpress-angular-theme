@@ -13,17 +13,20 @@ import { Http } from '@angular/http';
 import { WpApiModule, WpApiLoader, WpApiStaticLoader } from 'wp-api-angular';
 import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
+import { PostsComponent } from './posts/posts.component';
 
 
 const appRoutes: Routes = [
 {path: '', component: PagesComponent},
+{path: 'posts', component: PostsComponent}
  
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagesComponent
+    PagesComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

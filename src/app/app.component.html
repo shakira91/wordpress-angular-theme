@@ -1,8 +1,4 @@
-<div *ngIf="this.wp_page_id > 0" class="page">
+<div class="page">
 <h3 class="title">{{ wp_content?.title.rendered }}</h3>
 <div class="primary-content" [innerHTML]="wp_content?.content.rendered"></div>
-</div>
-
-<div *ngIf="this.wp_page_id == '0'" class="page">
-  There was no front page identified.
 </div>

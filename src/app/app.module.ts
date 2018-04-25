@@ -16,6 +16,7 @@ import { PagesComponent } from './pages/pages.component';
 import { PostsComponent } from './posts/posts.component';
 import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 const appRoutes: Routes = [
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     PagesComponent,
     PostsComponent,
     SinglePostComponent,
-    FrontPageComponent
+    FrontPageComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

@@ -11,13 +11,14 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AppComponent {
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
   title = 'app';
-  wp_content: any;
+  contentLodaded: boolean;
 
   ngOnInit() {
+    this.contentLodaded = true; 
     this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/front-page').subscribe((data) => {
       if (data == "0") {
         this.router.navigate(['posts/']);
-      }
-     });
+      } 
+    });
   }
 }

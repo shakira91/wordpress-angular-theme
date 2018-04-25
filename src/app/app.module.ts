@@ -17,12 +17,14 @@ import { PostsComponent } from './posts/posts.component';
 import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 
 const appRoutes: Routes = [
 {path: '', component: FrontPageComponent},
 {path: 'posts', component: PostsComponent},
-{path: 'post/:id', component: SinglePostComponent}
+{path: 'post/:id', component: SinglePostComponent},
+{ path: '**', component: NoPageFoundComponent }
  
 ]
 
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     PostsComponent,
     SinglePostComponent,
     FrontPageComponent,
-    NavigationComponent
+    NavigationComponent,
+    NoPageFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class AppComponent {
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
   title = 'app';
-  contentLodaded: boolean;
+  contentLodaded: boolean = false;
 
   ngOnInit() {
     this.contentLodaded = true; 

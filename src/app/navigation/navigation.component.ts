@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -9,12 +9,20 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export class NavigationComponent implements OnInit {
   @Input() frontPageContentLodaded; //if the content on the front page has loaded, load navigation
+  navItems: any;
+  
+  constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef) { }
 
-  constructor(private http: HttpClient) { }
+  navItemHovered(navItem, event) {
+    if(navItem.menu_item_parent > 0) {
+      this.renderer.addClass(event.target, 'sub-menu')
+    }
+    
+  }
 
   ngOnInit() {
     this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/menus').subscribe((data) => {
-     console.log(data)
+     this.navItems = data;
     });
   }
 

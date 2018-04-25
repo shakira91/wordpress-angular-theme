@@ -1,5 +1,17 @@
 <?php
 
+function get_menus() {
+    $menus = wp_get_nav_menu_items('menu');
+    return $menus;
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'custom/v1', '/menus/', array(
+            'methods' => 'GET',
+            'callback' => 'get_menus'
+    ) );
+} );
+
 function get_front_page() {
     return get_option( 'page_on_front' );
 }

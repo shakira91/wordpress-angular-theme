@@ -15,7 +15,9 @@ export class PagesComponent implements OnInit {
 
 
   ngOnInit() {
-    
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/pages/').subscribe((data) => {
+      console.log(data)
+    });
   }
 
 }

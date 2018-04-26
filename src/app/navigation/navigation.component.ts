@@ -14,13 +14,6 @@ export class NavigationComponent implements OnInit {
 
   constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef) { }
 
-  // navItemHovered(navItem, event) {
-  //   if(navItem.menu_item_parent > 0) {
-  //     this.renderer.addClass(event.target, 'sub-menu')
-  //   }
-    
-  // }
-
   ngOnInit() {
     this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/menus').subscribe((data) => {
      this.navItems = data;

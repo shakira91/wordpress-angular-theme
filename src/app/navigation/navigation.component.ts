@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Renderer2, ElementRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -12,7 +13,13 @@ export class NavigationComponent implements OnInit {
   navItems: any;
   navItemsArray = [];
 
-  constructor(private http: HttpClient, private renderer: Renderer2, private el: ElementRef) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+
+  navItemClicked(navItem) {
+    const title = navItem.navTitle.toLowerCase().replace(/\s+/g, '-');
+    this.router.navigate(['pages/'+ title]);
+    location.reload()
+  }
 
   ngOnInit() {
     this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/menus').subscribe((data) => {
@@ -22,10 +29,10 @@ export class NavigationComponent implements OnInit {
          navItemsObj['navID'] = element.ID;
          navItemsObj['navTitle'] = element.title;
          navItemsObj['navParentID'] = element.menu_item_parent;
+         navItemsObj['navPageID'] = element.object_id;
          this.navItemsArray.push(navItemsObj)
       });  
     });
-    console.log(this.navItemsArray)
   }
 
 }

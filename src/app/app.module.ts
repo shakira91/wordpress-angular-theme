@@ -22,6 +22,7 @@ import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 const appRoutes: Routes = [
 {path: '', component: FrontPageComponent},
+{path: 'pages/:id', component: PagesComponent},
 {path: 'posts', component: PostsComponent},
 {path: 'post/:id', component: SinglePostComponent},
 { path: '**', component: NoPageFoundComponent }

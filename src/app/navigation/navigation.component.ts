@@ -18,7 +18,7 @@ export class NavigationComponent implements OnInit {
   navItemClicked(navItem) {
     const title = navItem.navTitle.toLowerCase().replace(/\s+/g, '-');
     this.router.navigate(['pages/'+ title]);
-    location.reload()
+    location.reload();
   }
 
   ngOnInit() {

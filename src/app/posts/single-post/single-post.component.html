@@ -1,5 +1,5 @@
 <div class="post">
-  <h3 class="title"><a (click)="postClicked(wp_content.id)">{{ wp_content?.title.rendered }}</a></h3>
+  <h3 class="title">{{ wp_content?.title.rendered }}</h3>
   <small class="date">{{ wp_content?.date }}</small>
   <div class="primary-content" [innerHTML]="wp_content?.content.rendered"></div>
 </div>

@@ -14,13 +14,11 @@ export class PagesComponent implements OnInit {
 
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
-
   ngOnInit() {
-    console.log(this.route.snapshot.params.id)
-    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/pages?slug='+this.route.snapshot.params.id).subscribe((data) => {
+    this.route.params.subscribe(params => {
+      this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/pages?slug='+params.id).subscribe((data) => {
       this.wp_contents = data;
-      console.log(this.wp_contents)
-    });
+      });
+    }); 
   }
-
 }

@@ -45,7 +45,8 @@ const appRoutes: Routes = [
     HttpClientModule, 
     RouterModule.forRoot(appRoutes, {useHash: true})
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

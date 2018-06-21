@@ -23,7 +23,7 @@ export class NavigationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/menus').subscribe((data) => {
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/menus').subscribe((data) => {
      this.navItems = data;
       this.navItems.forEach((element, index) => {
       const navItemsObj = {};

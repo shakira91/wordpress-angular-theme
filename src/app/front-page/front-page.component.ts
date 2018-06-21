@@ -12,8 +12,8 @@ export class FrontPageComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/front-page').subscribe((data) => {
-      this.http.get('https://cors-anywhere.herokuapp.com/http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/pages/'+data).subscribe((data) => {
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/front-page').subscribe((data) => {
+      this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/pages/'+data).subscribe((data) => {
         this.wp_content = data;
       });
      });

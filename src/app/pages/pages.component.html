@@ -1,4 +1,4 @@
 <div class="page" *ngFor="let wp_content of wp_contents">
-  <h3 class="title">{{ wp_contents.title }}</h3>
+  <h3 class="title">{{ wp_content.title.rendered }}</h3>
   <div class="primary-content" [innerHTML]="wp_content?.content.rendered"></div>
-</div>
+</div> 

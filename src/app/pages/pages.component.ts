@@ -18,6 +18,7 @@ export class PagesComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/pages?slug='+params.id).subscribe((data) => {
       this.wp_contents = data;
+      console.log(this.wp_contents)
       });
     }); 
   }

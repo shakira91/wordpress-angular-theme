@@ -22,3 +22,8 @@ add_action( 'rest_api_init', function () {
             'callback' => 'get_front_page'
     ) );
 } );
+
+function theme_logo_setup() {
+    add_theme_support('custom-logo');
+}
+add_action('after_setup_theme', 'theme_logo_setup');

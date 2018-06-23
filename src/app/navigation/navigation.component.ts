@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
   @Input() frontPageContentLodaded; //if the content on the front page has loaded, load navigation
+  logoUrl: any;
   navItems: any;
   navItemsArray = [];
 
@@ -17,12 +18,15 @@ export class NavigationComponent implements OnInit {
 
   navItemClicked(navItem) {
     const title = navItem.navTitle.toLowerCase().replace(/\s+/g, '-');
-
     this.router.navigate(['pages/'+ title]);
     
   }
 
   ngOnInit() {
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/site-logo').subscribe((data) => {
+     this.logoUrl = data;
+     console.log(this.logoUrl.split(","))
+    });
     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/menus').subscribe((data) => {
      this.navItems = data;
       this.navItems.forEach((element, index) => {

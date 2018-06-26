@@ -39,7 +39,8 @@ const appRoutes: Routes = [
     FrontPageComponent,
     NavigationComponent,
     NoPageFoundComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,

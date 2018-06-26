@@ -18,7 +18,7 @@ export class AppComponent {
     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/front-page').subscribe((data) => {
       if (data == '0') {
         this.router.navigate(['posts/']);
-      } 
+      }
     });
   }
 }

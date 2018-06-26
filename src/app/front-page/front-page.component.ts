@@ -9,6 +9,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 })
 export class FrontPageComponent implements OnInit {
   wp_content: any;
+  wp_widgetMainContent: any;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -17,6 +18,9 @@ export class FrontPageComponent implements OnInit {
         this.wp_content = data;
       });
      });
+     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/widgets', {responseType: 'text'}).subscribe((data) => {
+      this.wp_widgetMainContent = data;
+    });
   }
 
 }

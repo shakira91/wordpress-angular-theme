@@ -25,7 +25,6 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/site-logo').subscribe((data) => {
      this.logoUrl = data;
-     console.log(this.logoUrl.split(","))
     });
     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/menus').subscribe((data) => {
      this.navItems = data;

@@ -2,4 +2,7 @@
   <!-- <h3 class="title">{{ wp_content?.title.rendered }}</h3> THIS IS DEFAULT CONTENT THAT SHOWS ON 'HOME'PAGE IN WORDPRESS
   <div class="primary-content" [innerHTML]="wp_content?.content.rendered"></div> -->
   <div [innerHTML]="wp_widgetMainContent"></div>
+  <div *ngFor="let wp_category of wp_categoryData">
+    <p (click)="categoryClicked(wp_category.id)">{{ wp_category.name }}</p>
+  </div>
 </div>

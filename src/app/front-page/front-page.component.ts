@@ -10,7 +10,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 export class FrontPageComponent implements OnInit {
   wp_content: any;
   wp_widgetMainContent: any;
+  wp_categoryData: any = [];
   constructor(private http: HttpClient) { }
+
+  categoryClicked(id) {
+    console.log(id)
+  }
 
   ngOnInit() {
     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/front-page').subscribe((data) => {
@@ -19,8 +24,14 @@ export class FrontPageComponent implements OnInit {
       });
      });
      this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/main-widgets', {responseType: 'text'}).subscribe((data) => {
-      this.wp_widgetMainContent = data;
+        this.wp_widgetMainContent = data;
+    });
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/categories').subscribe((data) => {
+      for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+          this.wp_categoryData.push(data[key]);
+        }
+     }
     });
   }
-
 }

@@ -68,7 +68,11 @@ add_action( 'rest_api_init', function () {
 } );
 
 function get_widgets() {
-    return dynamic_sidebar('Work Summary'); //return an array of widgets
+    $widgets_array = array(
+        dynamic_sidebar('Work Summary'),
+        dynamic_sidebar('Process Summary'),
+    ); 
+    return $widgets_array;
 }
 
 add_action( 'rest_api_init', function () {

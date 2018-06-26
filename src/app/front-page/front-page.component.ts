@@ -18,7 +18,7 @@ export class FrontPageComponent implements OnInit {
         this.wp_content = data;
       });
      });
-     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/widgets', {responseType: 'text'}).subscribe((data) => {
+     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/main-widgets', {responseType: 'text'}).subscribe((data) => {
       this.wp_widgetMainContent = data;
     });
   }

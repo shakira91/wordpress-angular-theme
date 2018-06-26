@@ -22,22 +22,34 @@ function get_site_logo() {
 }
 
 function register_widgets_init() {
+    register_sidebar( array(
+		'name'          => 'Ethereal Creative Summary',
+		'before_widget' => '<div id="ethereal-creative-summary-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	));
 	register_sidebar( array(
 		'name'          => 'Work Summary',
-		'id'            => 'work-summary-widget',
-		'before_widget' => '<div>',
+		'before_widget' => '<div id="work-summary-widget">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
     ));
     register_sidebar( array(
 		'name'          => 'Process Summary',
-		'id'            => 'process-summary-widget',
-		'before_widget' => '<div>',
+		'before_widget' => '<div id="process-summary-widget">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h2>',
 		'after_title'   => '</h2>',
-	));
+    ));
+    register_sidebar( array(
+		'name'          => 'Footer',
+		'before_widget' => '<div id="footer-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+    ));
 }
 add_action( 'widgets_init', 'register_widgets_init' );
 
@@ -69,8 +81,10 @@ add_action( 'rest_api_init', function () {
 
 function get_widgets() {
     $widgets_array = array(
+        dynamic_sidebar('Ethereal Creative Summary'),
         dynamic_sidebar('Work Summary'),
         dynamic_sidebar('Process Summary'),
+        dynamic_sidebar('Footer'),
     ); 
     return $widgets_array;
 }

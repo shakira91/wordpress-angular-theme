@@ -18,6 +18,7 @@ import { SinglePostComponent } from './posts/single-post/single-post.component';
 import { FrontPageComponent } from './front-page/front-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 const appRoutes: Routes = [
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     SinglePostComponent,
     FrontPageComponent,
     NavigationComponent,
-    NoPageFoundComponent
+    NoPageFoundComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

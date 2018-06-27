@@ -19,14 +19,16 @@ import { FrontPageComponent } from './front-page/front-page.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { WorkComponent } from './work/work.component';
 
 
 const appRoutes: Routes = [
 {path: '', component: FrontPageComponent},
+{path: 'pages/work/:id', component: WorkComponent},
 {path: 'pages/:id', component: PagesComponent},
 {path: 'posts', component: PostsComponent},
 {path: 'post/:id', component: SinglePostComponent},
-{ path: '**', component: NoPageFoundComponent }
+{path: '**', component: NoPageFoundComponent}
  
 ]
 
@@ -40,6 +42,7 @@ const appRoutes: Routes = [
     NavigationComponent,
     NoPageFoundComponent,
     FooterComponent,
+    WorkComponent,
     
   ],
   imports: [

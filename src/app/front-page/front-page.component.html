@@ -3,6 +3,6 @@
   <div class="primary-content" [innerHTML]="wp_content?.content.rendered"></div> -->
   <div [innerHTML]="wp_widgetMainContent"></div>
   <div *ngFor="let wp_category of wp_categoryData">
-    <p (click)="categoryClicked(wp_category.id)">{{ wp_category.name }}</p>
+    <p (click)="categoryClicked(wp_category.id, wp_category.slug)">{{ wp_category.name }}</p>
   </div>
 </div>

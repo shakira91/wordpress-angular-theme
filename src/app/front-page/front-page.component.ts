@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-front-page',
@@ -11,11 +12,11 @@ export class FrontPageComponent implements OnInit {
   wp_content: any;
   wp_widgetMainContent: any;
   wp_categoryData: any = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
-  categoryClicked(id) {
-    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/media?categories='+id).subscribe((data) => {
-      console.log(data)
+  categoryClicked(id, slug) {
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/categories/'+id).subscribe((data) => {
+      this.router.navigate(['pages/work/'+ slug]);
     });
   }
 
@@ -25,13 +26,15 @@ export class FrontPageComponent implements OnInit {
         this.wp_content = data;
       });
      });
-     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/main-widgets', {responseType: 'text'}).subscribe((data) => {
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/custom/v1/main-widgets', {responseType: 'text'}).subscribe((data) => {
         this.wp_widgetMainContent = data;
     });
     this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/categories').subscribe((data) => {
       for (var key in data) {
         if (data.hasOwnProperty(key)) {
-          this.wp_categoryData.push(data[key]);
+          if(data[key].name !== 'Uncategorized') {
+            this.wp_categoryData.push(data[key]);
+          }  
         }
      }
     });

@@ -14,7 +14,9 @@ export class FrontPageComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   categoryClicked(id) {
-    console.log(id)
+    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/media?categories='+id).subscribe((data) => {
+      console.log(data)
+    });
   }
 
   ngOnInit() {

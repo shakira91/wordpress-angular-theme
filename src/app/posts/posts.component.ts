@@ -17,7 +17,7 @@ export class PostsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/posts').subscribe((data) => {
+    this.http.get('http://etherealcreative.com/wp-json/wp/v2/posts').subscribe((data) => {
           this.wp_contents = data;
     });
   }

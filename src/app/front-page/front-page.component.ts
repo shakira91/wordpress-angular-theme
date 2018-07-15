@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-front-page',
@@ -11,7 +12,7 @@ export class FrontPageComponent implements OnInit {
   wp_content: any;
   wp_widgetMainContent: any;
   wp_categoryData: any = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   categoryClicked(id) {
     this.http.get('http://etherealcreative.com/wp-json/wp/v2/media?categories='+id).subscribe((data) => {
@@ -31,7 +32,9 @@ export class FrontPageComponent implements OnInit {
     this.http.get('http://etherealcreative.com/wp-json/wp/v2/categories').subscribe((data) => {
       for (var key in data) {
         if (data.hasOwnProperty(key)) {
-          this.wp_categoryData.push(data[key]);
+          if(data[key].name !== 'Uncategorized') {
+            this.wp_categoryData.push(data[key]);
+          }  
         }
      }
     });

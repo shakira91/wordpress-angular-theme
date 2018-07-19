@@ -1,4 +1,12 @@
-<ul class="navigation">
-  <span id="logo" [innerHTML]="logoUrl"></span>
-  <li *ngFor="let navItem of navItemsArray;" [ngClass]="{ 'sub-menu': navItem.navParentID > 0 }" class="menu-item-{{ navItem.navID }}"><a (click)="navItemClicked(navItem)"> {{ navItem.navTitle }}</a></li>
-</ul>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+      <div class="row"> 
+        <span [innerHTML]="logoUrl"></span>
+        <ul class="navigation">
+          <li *ngFor="let navItem of navItemsArray;" [ngClass]="{ 'sub-menu': navItem.navParentID > 0 }" class="menu-item-{{ navItem.navID }}"><a (click)="navItemClicked(navItem)"> {{ navItem.navTitle }}</a></li>
+        </ul>
+    </div>
+  </div>
+</nav>
+
+

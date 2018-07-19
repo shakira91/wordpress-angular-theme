@@ -22,13 +22,13 @@ function get_site_logo() {
 }
 
 function register_widgets_init() {
-    register_sidebar( array(
-		'name'          => 'Main Content',
-		'before_widget' => '<div class="widget-area-main">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2>',
-		'after_title'   => '</h2>',
-	));
+    // register_sidebar( array(
+	// 	'name'          => 'Main Content',
+	// 	'before_widget' => '<div class="widget-area-main">',
+	// 	'after_widget'  => '</div>',
+	// 	'before_title'  => '<h2>',
+	// 	'after_title'   => '</h2>',
+	// ));
     register_sidebar( array(
 		'name'          => 'Footer Content',
 		'before_widget' => '<div class="widget-area-footer">',
@@ -73,12 +73,12 @@ add_action( 'rest_api_init', function () {
     ) );
 } );
 
-add_action( 'rest_api_init', function () {
-    register_rest_route( 'custom/v1', '/main-widgets/', array(
-            'methods' => 'GET',
-            'callback' => 'get_main_widgets'
-    ) );
-} );
+// add_action( 'rest_api_init', function () {
+//     register_rest_route( 'custom/v1', '/main-widgets/', array(
+//             'methods' => 'GET',
+//             'callback' => 'get_main_widgets'
+//     ) );
+// } );
 
 add_action( 'rest_api_init', function () {
     register_rest_route( 'custom/v1', '/footer-widgets/', array(

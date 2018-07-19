@@ -14,7 +14,7 @@ export class WorkComponent implements OnInit {
   wp_categoryDataImage: any = [];
 
   ngOnInit() {
-    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/categories?slug='+this.route.snapshot.params.id).subscribe((data) => {
+    this.http.get('http://dev.etherealcreative.com/wp-json/wp/v2/categories?slug='+this.route.snapshot.params.id).subscribe((data) => {
       this.http.get(data["0"]._links["wp:post_type"]['1'].href).subscribe((data) => {
         for (var key in data) {
           if (data.hasOwnProperty(key)) {

@@ -13,7 +13,7 @@ export class SinglePostComponent implements OnInit {
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.http.get('http://dev-hias-wordpress-testing.pantheonsite.io/wp-json/wp/v2/posts/'+this.route.snapshot.params.id).subscribe((data) => {
+    this.http.get('http://dev.etherealcreative.com/wp-json/wp/v2/posts/'+this.route.snapshot.params.id).subscribe((data) => {
           this.wp_content = data;
     });
   }

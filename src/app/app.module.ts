@@ -10,7 +10,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Headers } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { Http } from '@angular/http';
-import { WpApiModule, WpApiLoader, WpApiStaticLoader } from 'wp-api-angular';
 import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 import { PostsComponent } from './posts/posts.component';
@@ -20,6 +19,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { WorkComponent } from './work/work.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const appRoutes: Routes = [
@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule, 
-    RouterModule.forRoot(appRoutes, {useHash: false})
+    RouterModule.forRoot(appRoutes, {useHash: false}), NgbModule.forRoot()
   ],
   providers: [
   ],

@@ -1,8 +1,27 @@
-<div class="front-page">
+
   <!-- <h3 class="title">{{ wp_content?.title.rendered }}</h3> THIS IS DEFAULT CONTENT THAT SHOWS ON 'HOME'PAGE IN WORDPRESS
   <div class="primary-content" [innerHTML]="wp_content?.content.rendered"></div> -->
-  <div [innerHTML]="wp_widgetMainContent"></div>
+  <!-- <div [innerHTML]="wp_widgetMainContent"></div>
   <div *ngFor="let wp_category of wp_categoryData">
     <p (click)="categoryClicked(wp_category.id, wp_category.slug)">{{ wp_category.name }}</p>
+  </div> -->
+<div class="front-page">
+  <div id="video-wrapper">
+    <video autoplay muted (ended)="videoEnded()">
+      <source src="http://etherealcreative.com/Ethereal%20Reel%20V2-FINAL%20medium%20res.mp4
+      " type="video/mp4">
+    </video>
+  </div>
+  <div class="bkgd-white bkgd">
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+            <div class="lifestyle front">
+              <h3>Lifestyle Content is Our Thing</h3>
+              <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem </p>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
 </div>

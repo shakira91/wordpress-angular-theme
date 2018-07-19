@@ -15,7 +15,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.contentLodaded = true; 
-    this.http.get('http://etherealcreative.com/wp-json/custom/v1/front-page').subscribe((data) => {
+    this.http.get('http://dev.etherealcreative.com/wp-json/custom/v1/front-page').subscribe((data) => {
       if (data == '0') {
         this.router.navigate(['posts/']);
       }

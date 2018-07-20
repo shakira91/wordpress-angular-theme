@@ -2,3 +2,33 @@
     width: 300px;
     padding: 20px;
 }
+
+nav {
+    -webkit-animation: slideDown 0.9s 1;
+    animation: slideDown 0.9s 1;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+
+@-webkit-keyframes slideDown {
+    0% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(10%);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(10%);
+      opacity: 1;
+    }
+   }

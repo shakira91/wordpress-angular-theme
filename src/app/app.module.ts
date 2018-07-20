@@ -19,7 +19,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { WorkComponent } from './work/work.component';
+import { SharedServiceService } from '../shared-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavigationModalComponent } from './navigation/navigation-modal/navigation-modal.component';
 
 
 const appRoutes: Routes = [
@@ -43,6 +45,7 @@ const appRoutes: Routes = [
     NoPageFoundComponent,
     FooterComponent,
     WorkComponent,
+    NavigationModalComponent,
     
   ],
   imports: [
@@ -52,6 +55,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {useHash: false}), NgbModule.forRoot()
   ],
   providers: [
+    SharedServiceService
   ],
   bootstrap: [AppComponent]
 })

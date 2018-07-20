@@ -5,11 +5,10 @@
   <div *ngFor="let wp_category of wp_categoryData">
     <p (click)="categoryClicked(wp_category.id, wp_category.slug)">{{ wp_category.name }}</p>
   </div> -->
-<div class="front-page">
+<div class="front-page" *ngIf="navLoaded">
   <div id="video-wrapper">
-    <video autoplay muted (ended)="videoEnded()">
-      <source src="http://etherealcreative.com/Ethereal%20Reel%20V2-FINAL%20medium%20res.mp4
-      " type="video/mp4">
+    <video  [autoplay]="true" [muted]="true" [loop]="true"  (ended)="videoEnded()">
+      <source src="http://etherealcreative.com/Ethereal%20Reel%20V2-FINAL%20medium%20res.mp4" type="video/mp4">
     </video>
   </div>
   <div class="bkgd-white bkgd">

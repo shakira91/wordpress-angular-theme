@@ -1,41 +1,38 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ViewChild, Renderer2, ElementRef } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import { SharedServiceService } from '../../shared-service.service';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
-  @Input() frontPageContentLodaded; //if the content on the front page has loaded, load navigation
+export class NavigationComponent implements OnInit, AfterViewInit  {
   logoUrl: any;
-  navItems: any;
-  navItemsArray = [];
+  navLoaded: boolean = false;
+  @Input() menu: boolean = false;
+  @ViewChild("hamburger") hamburger;
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private service: SharedServiceService, private elRef: ElementRef, private renderer: Renderer2) { }
 
-  navItemClicked(navItem) {
-    const title = navItem.navTitle.toLowerCase().replace(/\s+/g, '-');
-    this.router.navigate(['pages/'+ title]);
+  ngAfterViewInit () {
+    this.service.navContentLoaded();
+  }
+
+  menuClicked() {
+    this.menu = !this.menu;
+    if (this.menu) {
+      this.renderer.addClass(this.hamburger.nativeElement, "is-active");
+    } else  {
+      this.renderer.removeClass(this.hamburger.nativeElement, "is-active");
+    }
     
   }
 
   ngOnInit() {
     this.http.get('http://dev.etherealcreative.com/wp-json/custom/v1/site-logo').subscribe((data) => {
      this.logoUrl = data;
-    });
-    this.http.get('http://dev.etherealcreative.com/wp-json/custom/v1/menus').subscribe((data) => {
-     this.navItems = data;
-      this.navItems.forEach((element, index) => {
-      const navItemsObj = {};
-         navItemsObj['navID'] = element.ID;
-         navItemsObj['navTitle'] = element.title;
-         navItemsObj['navParentID'] = element.menu_item_parent;
-         navItemsObj['navPageID'] = element.object_id;
-         this.navItemsArray.push(navItemsObj)
-      });  
     });
   }
 

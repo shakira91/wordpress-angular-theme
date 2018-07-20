@@ -1,0 +1,7 @@
+<div class="container-fluid position-fixed">
+    <div class="col-lg-12">
+        <ul class="navigation">
+            <li *ngFor="let navItem of navItemsArray;" [ngClass]="{ 'sub-menu': navItem.navParentID > 0 }" class="menu-item-{{ navItem.navID }}"><a (click)="navItemClicked(navItem)"> {{ navItem.navTitle }}</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,11 +12,13 @@ export class NavigationModalComponent implements OnInit {
   @Input() menu: boolean;
   navItems: any;
   navItemsArray = [];
+  @Output() hideMenu = new EventEmitter<boolean>();
 
   constructor(private http: HttpClient,private router: Router, private route: ActivatedRoute) { }
 
   navItemClicked(navItem) {
     const title = navItem.navTitle.toLowerCase().replace(/\s+/g, '-');
+    this.hideMenu.emit(false);
     this.router.navigate(['pages/'+ title]);
     
   }

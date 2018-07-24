@@ -1,4 +1,4 @@
-<app-navigation-modal [menu]="menu" *ngIf="menu"></app-navigation-modal>
+<app-navigation-modal [menu]="menu" *ngIf="menu" (hideMenu)="closeMenu($event)"></app-navigation-modal>
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
       <div class="col-lg-11">

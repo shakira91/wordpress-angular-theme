@@ -13,6 +13,7 @@ export class NavigationComponent implements OnInit, AfterViewInit  {
   navLoaded: boolean = false;
   @Input() menu: boolean = false;
   @ViewChild("hamburger") hamburger;
+  hideMenu: boolean = false;
 
   constructor(private http: HttpClient, private service: SharedServiceService, private elRef: ElementRef, private renderer: Renderer2) { }
 
@@ -28,6 +29,12 @@ export class NavigationComponent implements OnInit, AfterViewInit  {
       this.renderer.removeClass(this.hamburger.nativeElement, "is-active");
     }
     
+  }
+
+  closeMenu(event) {
+    if (event == false) {
+      this.menu = false;
+    }
   }
 
   ngOnInit() {

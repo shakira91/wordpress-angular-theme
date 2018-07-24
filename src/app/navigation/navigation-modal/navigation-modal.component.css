@@ -13,6 +13,11 @@
     top: 0;
 }
 
+.navigation {
+    position: relative;
+    top: 120px;
+}
+
 li {
     list-style-type: none;
     opacity: 0;
@@ -69,5 +74,6 @@ li:nth-child(5) {
   @media (max-width: 996px) { 
     :host {
         font-size: 2em;
+        text-align: right;
    }
  }

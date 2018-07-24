@@ -32,3 +32,9 @@ nav {
       opacity: 1;
     }
    }
+   @media (max-width: 996px) { 
+   .col-lg-1 {
+    position: absolute;
+    text-align: right;  
+  }
+ }

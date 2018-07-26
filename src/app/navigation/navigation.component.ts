@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, ViewChild, Renderer2, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ViewChild, Renderer2, ElementRef, HostListener} from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { SharedServiceService } from '../../shared-service.service';
@@ -13,6 +13,7 @@ export class NavigationComponent implements OnInit, AfterViewInit  {
   navLoaded: boolean = false;
   @Input() menu: boolean = false;
   @ViewChild("hamburger") hamburger;
+  changeNavBkgd: boolean;
   hideMenu: boolean = false;
 
   constructor(private http: HttpClient, private service: SharedServiceService, private elRef: ElementRef, private renderer: Renderer2) { }
@@ -27,6 +28,15 @@ export class NavigationComponent implements OnInit, AfterViewInit  {
       this.renderer.addClass(this.hamburger.nativeElement, "is-active");
     } else  {
       this.renderer.removeClass(this.hamburger.nativeElement, "is-active");
+    }
+    
+  }
+
+  @HostListener("window:scroll") pageScrolled() { 
+    if (window.scrollY > document.querySelectorAll(".lifestyle")[0].getBoundingClientRect().top) {
+      this.changeNavBkgd = true;
+    } else {
+      this.changeNavBkgd = false;
     }
     
   }

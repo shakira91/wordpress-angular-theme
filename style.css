@@ -2,7 +2,12 @@
 @import "hamburger.css";
 
 .bkgd-white {
-    background-color: white;
+    background-color: #fff;
+}
+
+.bkgd-blk {
+    background-color: #000;
+    color: #fff;
 }
 
 .bkgd {

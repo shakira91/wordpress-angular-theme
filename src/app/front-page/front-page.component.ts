@@ -12,7 +12,6 @@ import { SharedServiceService } from '../../shared-service.service';
 })
 export class FrontPageComponent implements OnInit {
   navLoaded: boolean;
-  videoHasEnded: boolean;
   wp_content: any;
   wp_widgetMainContent: any;
   wp_categoryData: any = [];
@@ -23,11 +22,6 @@ export class FrontPageComponent implements OnInit {
   //     console.log(data)
   //   });
   // }
-
-  videoEnded() {
-    this.videoHasEnded = true;
-    console.log(this.videoHasEnded)
-  }
 
   ngOnInit() {
     this.navLoaded = this.service.navContentLoaded()

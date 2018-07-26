@@ -1,4 +1,14 @@
-#video-wrapper {
+button {
+    border: 5px solid white;
+    padding: 15px 40px;
+    background: white;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 45px 0px;
+}
+
+#reel-wrapper {
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -8,10 +18,50 @@
     border: 0;
 }
 
-#video-wrapper video{
+#reel-wrapper video{
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
 }
+
+#reel-wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0deg,#000000 0,#383838);
+    opacity: .5;
+    z-index: 9;
+}
+
+#description {
+    font-size: 2.7em;
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    bottom: 100px;
+    max-width: 910px;
+}
+
+.work {
+    background-image: url("http://dev.etherealcreative.com/wp-content/uploads/2018/07/Screen-Shot-2018-07-25-at-5.23.14-PM.png");
+    background-attachment: fixed;
+    min-height: 300px;
+}
+
+.icon {
+    display: inline-block;
+    margin-left: 55px;
+}
+
+.icon img{
+    width: 140px;
+}
+
+
+
+

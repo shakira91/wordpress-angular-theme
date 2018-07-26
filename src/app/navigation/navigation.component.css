@@ -12,6 +12,12 @@ nav {
     animation-delay: 0.5s;
 }
 
+.nav-bkgd {
+  background: #000000d4;
+  top: -11px;
+  opacity: 05;
+  padding-bottom: 21px;
+}
 
 @-webkit-keyframes slideDown {
     0% {

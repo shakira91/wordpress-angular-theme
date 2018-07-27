@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -8,28 +8,20 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.css']
 })
-export class WorkComponent implements OnInit {
+export class WorkComponent implements OnInit, AfterViewInit {
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
   wp_categoryDataImage: any = [];
 
-  ngOnInit() {
-    this.http.get('http://dev.etherealcreative.com/wp-json/wp/v2/media').subscribe((data) => {
+  ngAfterViewInit() {
+    window.scrollTo(0, 0);
+  }
 
+  ngOnInit() {
+    this.http.get('http://dev.etherealcreative.com/wp-json/wp/v2/media?per_page=100').subscribe((data) => {
       for (var key in data) {
         if (data.hasOwnProperty(key)) {
-          data[key].categories.forEach(element => {
-            if (element > 1) {
-              this.http.get('http://dev.etherealcreative.com/index.php/wp-json/wp/v2/media?categories=' + element).subscribe((data) => {
-                for (var key in data) {
-                  if (data.hasOwnProperty(key)) {
-                    this.wp_categoryDataImage.push(data[key].source_url);
-                  }
-                }
-              });
-            }
-          });
-
+          this.wp_categoryDataImage.push(data[key].source_url) //data[key].categories to get category name
         }
       }
     });

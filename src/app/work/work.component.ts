@@ -14,14 +14,24 @@ export class WorkComponent implements OnInit {
   wp_categoryDataImage: any = [];
 
   ngOnInit() {
-    this.http.get('http://dev.etherealcreative.com/wp-json/wp/v2/categories?slug='+this.route.snapshot.params.id).subscribe((data) => {
-      this.http.get(data["0"]._links["wp:post_type"]['1'].href).subscribe((data) => {
-        for (var key in data) {
-          if (data.hasOwnProperty(key)) {
-            this.wp_categoryDataImage.push(data[key].source_url); 
-          }
-       }
-      });
+    this.http.get('http://dev.etherealcreative.com/wp-json/wp/v2/media').subscribe((data) => {
+
+      for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+          data[key].categories.forEach(element => {
+            if (element > 1) {
+              this.http.get('http://dev.etherealcreative.com/index.php/wp-json/wp/v2/media?categories=' + element).subscribe((data) => {
+                for (var key in data) {
+                  if (data.hasOwnProperty(key)) {
+                    this.wp_categoryDataImage.push(data[key].source_url);
+                  }
+                }
+              });
+            }
+          });
+
+        }
+      }
     });
   }
 }

@@ -13,3 +13,8 @@
 .bkgd {
     padding: 50px;
 }
+
+.main {
+    margin-top: 120px;
+    overflow-x: hidden;
+}

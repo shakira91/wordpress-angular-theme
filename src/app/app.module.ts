@@ -22,16 +22,18 @@ import { WorkComponent } from './work/work.component';
 import { SharedServiceService } from '../shared-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationModalComponent } from './navigation/navigation-modal/navigation-modal.component';
+import { ProcessComponent } from './process/process.component';
 
 
 const appRoutes: Routes = [
-{path: '', component: FrontPageComponent},
-{path: 'pages/work/:id', component: WorkComponent},
-{path: 'pages/:id', component: PagesComponent},
-{path: 'posts', component: PostsComponent},
-{path: 'post/:id', component: SinglePostComponent},
-{path: '**', component: NoPageFoundComponent}
- 
+  { path: '', component: FrontPageComponent },
+  { path: 'pages/work', component: WorkComponent },
+  { path: 'pages/process', component: ProcessComponent },
+  { path: 'pages/:id', component: PagesComponent },
+  { path: 'posts', component: PostsComponent },
+  { path: 'post/:id', component: SinglePostComponent },
+  { path: '**', component: NoPageFoundComponent }
+
 ]
 
 @NgModule({
@@ -46,13 +48,14 @@ const appRoutes: Routes = [
     FooterComponent,
     WorkComponent,
     NavigationModalComponent,
-    
+    ProcessComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule, 
-    RouterModule.forRoot(appRoutes, {useHash: false}), NgbModule.forRoot()
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes, { useHash: false }), NgbModule.forRoot()
   ],
   providers: [
     SharedServiceService

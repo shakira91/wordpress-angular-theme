@@ -12,3 +12,18 @@ figure {
 figure.ng-lazyloaded {
     opacity: 1;
 }
+
+.size-one {
+    max-width: 100%;
+    height : 300px;
+}
+
+.size-two {
+    max-width: 70%;
+    height : 500px;
+}
+
+.size-three {
+    max-width: 30%;
+    height : 500px;
+}

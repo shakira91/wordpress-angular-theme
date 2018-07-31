@@ -1,6 +1,6 @@
-<div *ngFor="let categoryImage of this.wp_categoryDataImage">
-
-  <figure [defaultImage]="defaultImage" [lazyLoad]="categoryImage" [offset]="offset"></figure>
+<div *ngFor="let categoryImage of this.wp_categoryDataImage; let i = index">
+  <figure [defaultImage]="defaultImage" [lazyLoad]="categoryImage" [offset]="offset" [class.size-one]=" i == 0"
+  [class.size-two]=" i == 1"
+  [class.size-three]=" i == 2"></figure>
 </div>
 
-<!-- [ngStyle]="{ 'background-image': 'url(' + categoryImage + ')'}" -->

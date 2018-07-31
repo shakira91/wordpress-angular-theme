@@ -1,6 +1,7 @@
-<div *ngFor="let categoryImage of this.wp_categoryDataImage; let i = index">
-  <figure [defaultImage]="defaultImage" [lazyLoad]="categoryImage" [offset]="offset" [class.size-one]=" i == 0"
-  [class.size-two]=" i == 1"
-  [class.size-three]=" i == 2"></figure>
+<div *ngFor="let categoryImage of this.wp_categoryDataImage; let i = index;" 
+[class.size-one]=" i == 0"
+[class.size-two]=" i == 1"
+[class.size-three]=" i == 2">
+  <figure [defaultImage]="defaultImage" [lazyLoad]="categoryImage" [offset]="offset" ></figure>
 </div>
 

@@ -1,3 +1,6 @@
+div {
+}
+
 figure {
     max-width: 500px;
     height: 500px;
@@ -13,17 +16,17 @@ figure.ng-lazyloaded {
     opacity: 1;
 }
 
-.size-one {
+.size-one, .size-one figure {
     max-width: 100%;
     height : 300px;
 }
 
-.size-two {
+.size-two, .size-two figure {
     max-width: 70%;
     height : 500px;
 }
 
-.size-three {
+.size-three, .size-three figure {
     max-width: 30%;
     height : 500px;
 }

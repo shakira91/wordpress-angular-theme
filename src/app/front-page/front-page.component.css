@@ -44,7 +44,8 @@ button {
     z-index: 99;
     color: #fff;
     bottom: 100px;
-    max-width: 910px;
+    max-width: 1140px;
+    text-align: center;
 }
 
 .work {

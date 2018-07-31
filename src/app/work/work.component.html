@@ -1,3 +1,6 @@
-<figure *ngFor="let categoryImage of this.wp_categoryDataImage">
-  <img src="{{ categoryImage }}">
-</figure>
+<div *ngFor="let categoryImage of this.wp_categoryDataImage">
+
+  <figure [defaultImage]="defaultImage" [lazyLoad]="categoryImage" [offset]="offset"></figure>
+</div>
+
+<!-- [ngStyle]="{ 'background-image': 'url(' + categoryImage + ')'}" -->

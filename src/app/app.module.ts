@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { AppComponent } from './app.component';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -55,6 +55,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    LazyLoadImageModule,
     RouterModule.forRoot(appRoutes, { useHash: false }), NgbModule.forRoot()
   ],
   providers: [

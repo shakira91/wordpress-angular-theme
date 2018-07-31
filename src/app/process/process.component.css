@@ -1,5 +1,9 @@
-img {
+.process-img {
     width: 968px;
+    height: 645px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .process-desc {

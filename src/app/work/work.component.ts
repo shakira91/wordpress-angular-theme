@@ -12,6 +12,9 @@ export class WorkComponent implements OnInit, AfterViewInit {
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
   wp_categoryDataImage: any = [];
+  defaultImage = 'https://images.unsplash.com/photo-1468413922365-e3766a17da9e?dpr=2&auto=compress,format&fit=crop&w=1199&h=800&q=80';
+  backgroundImage = 'https://images.unsplash.com/photo-1443890923422-7819ed4101c0?fm=jpg';
+  offset = 100;
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);

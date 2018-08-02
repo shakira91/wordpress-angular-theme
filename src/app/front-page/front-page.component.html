@@ -1,74 +1,96 @@
-
-  <!-- <h3 class="title">{{ wp_content?.title.rendered }}</h3> THIS IS DEFAULT CONTENT THAT SHOWS ON 'HOME'PAGE IN WORDPRESS
+<!-- <h3 class="title">{{ wp_content?.title.rendered }}</h3> THIS IS DEFAULT CONTENT THAT SHOWS ON 'HOME'PAGE IN WORDPRESS
   <div class="primary-content" [innerHTML]="wp_content?.content.rendered"></div> -->
-  <!-- <div [innerHTML]="wp_widgetMainContent"></div>
+<!-- <div [innerHTML]="wp_widgetMainContent"></div>
   <div *ngFor="let wp_category of wp_categoryData">
     <p (click)="categoryClicked(wp_category.id, wp_category.slug)">{{ wp_category.name }}</p>
   </div> -->
 <div class="front-page">
-    <div class="container">
-      <div class="row">
-        <div id="description"><p>We are a creative content agency dedicated to providing top notch lifestyle content. </p><p>Every brand has a story. Let us help you tell yours.</p></div>
+  <div class="container">
+    <div class="row">
+      <div id="description">
+        <p>We are a creative content agency dedicated to providing top notch lifestyle content. </p>
+        <p>Every brand has a story. Let us help you tell yours.</p>
       </div>
     </div>
+  </div>
   <div id="reel-wrapper">
-    <video  [autoplay]="true" [muted]="true" [loop]="true"  (ended)="videoEnded()">
+    <video [autoplay]="true" [muted]="true" [loop]="true">
       <source src="http://etherealcreative.com/Ethereal%20Reel%20V2-FINAL%20medium%20res.mp4" type="video/mp4">
     </video>
   </div>
   <div class="bkgd-blk bkgd">
     <div class="container">
       <div class="row">
-          <div class="col-12">
-            <div class="lifestyle front text-center">
-              <h3>Lifestyle Content is Our Thing</h3>
-              <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem </p>
-            </div>
+        <div class="col-12">
+          <div class="lifestyle front text-center">
+            <h3>Lifestyle Content is Our Thing</h3>
+            <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+              make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+              Lorem </p>
           </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="bkgd-white bkgd">
-      <div class="container">
-        <div class="row">
-            <div class="col-12">
-              <div class="brand front text-center">
-                <h3>Your Brand Defined</h3>
-                <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem </p>
-                <div>
-                  <span class="icon"><img  src="https://static.thenounproject.com/png/38719-200.png"><br>Strategize</span>
-                  <span class="icon"><img  src="https://static.thenounproject.com/png/810264-200.png"><br>Brand Identity</span>
-                  <span class="icon"><img  src="https://static.thenounproject.com/png/1514794-200.png"><br>Execution</span>
-                  <span class="icon"><img  src="https://static.thenounproject.com/png/799768-200.png"><br>Post Production</span>
-                </div>
-                <button>Learn more</button>
-              </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="brand front text-center">
+            <h3>Your Brand Defined</h3>
+            <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+              make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+              Lorem </p>
+            <div>
+              <span class="icon">
+                <img src="https://static.thenounproject.com/png/38719-200.png">
+                <br>Strategize</span>
+              <span class="icon">
+                <img src="https://static.thenounproject.com/png/810264-200.png">
+                <br>Brand Identity</span>
+              <span class="icon">
+                <img src="https://static.thenounproject.com/png/1514794-200.png">
+                <br>Execution</span>
+              <span class="icon">
+                <img src="https://static.thenounproject.com/png/799768-200.png">
+                <br>Post Production</span>
             </div>
+            <button>Learn more</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="bkgd-blk bkgd">
-        <div class="container">
-          <div class="row">
-              <div class="col-12">
-                <div class="sales front text-center">
-                  <h3>Heighten your Sales Experience</h3>
-                  <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem </p>
-                </div>
-              </div>
+  </div>
+  <div class="bkgd-blk bkgd">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="sales front text-center">
+            <h3>Heighten your Sales Experience</h3>
+            <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+              make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+              remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+              Lorem </p>
           </div>
         </div>
       </div>
-      <div class="work bkgd">
-          <div class="container">
-            <div class="row">
-                <div class="col-12">
-                  <div class="work-link front text-center">
-                      <button>Our Work Speaks for Itself</button>                  
-                </div>
-            </div>
+    </div>
+  </div>
+  <div class="work bkgd">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="work-link front text-center">
+            <button>Our Work Speaks for Itself</button>
           </div>
         </div>
-      
-               
-</div>
+      </div>
+    </div>
+
+
+  </div>

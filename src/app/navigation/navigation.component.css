@@ -13,7 +13,7 @@ nav {
 }
 
 .nav-bkgd {
-  background: #000000d4;
+  background-color: rgba(0, 0, 0, 0.8313725490196079);
   top: -11px;
   opacity: 05;
   padding-bottom: 21px;

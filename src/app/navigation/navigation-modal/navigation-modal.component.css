@@ -6,7 +6,7 @@
 
 .container-fluid {
     z-index: 999;
-    background: #000000e0;
+    background: rgba(0, 0, 0, 0.8784313725490196);
     color: white;
     width: 100%;
     bottom: 0;

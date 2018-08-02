@@ -4,6 +4,8 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: opacity 1s;
+    opacity: 0;
 }
 
 .process-desc {
@@ -14,4 +16,8 @@
     padding: 150px 66px;
     line-height: 2em;
     min-height: 645px;
+}
+
+.ng-lazyloaded {
+    opacity: 1;
 }

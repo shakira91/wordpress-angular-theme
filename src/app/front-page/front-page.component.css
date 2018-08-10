@@ -1,11 +1,17 @@
 button {
-    border: 5px solid white;
-    padding: 15px 40px;
-    background: white;
-    color: #000;
-    font-weight: bold;
+    background: none;
+    margin: 54px 50px 0px 50px;
+    color: #ededeb;
     font-size: 1.5em;
-    margin: 45px 0px;
+    border: 2px solid #ededeb;
+    padding: 10px 64px;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: 0.5s ease all;
+    background: black;
+    border: 2px solid black;
 }
 
 #reel-wrapper {
@@ -18,7 +24,7 @@ button {
     border: 0;
 }
 
-#reel-wrapper video{
+#reel-wrapper iframe{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -48,6 +54,46 @@ button {
     text-align: center;
 }
 
+.brand-defined {
+    background: url(http://dev.etherealcreative.com/wp-content/uploads/2018/08/BARCLAY_MICA_EDITS-44.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: white;
+}
+
+.brand span:nth-child(1) {
+    background: #f9f8f6;
+    padding: 20px;
+}
+
+.brand span:nth-child(2) {
+    background: #f2efeb;
+    padding: 20px;
+
+}
+
+.brand span:nth-child(3) {
+    background: #ece7e1;
+    padding: 20px;
+
+}
+
+.brand span:nth-child(4) {
+    
+    background: #e5dfd7;
+    padding: 20px;
+
+}
+
+.brand-defined .col-12 {   
+    background: rgba(103, 83, 68, 0.4588235294117647);
+    border: 2px solid white;
+    padding: 55px 60px;
+
+}
+
 .work {
     background-image: url("http://dev.etherealcreative.com/wp-content/uploads/2018/07/Screen-Shot-2018-07-25-at-5.23.14-PM.png");
     background-attachment: fixed;
@@ -56,7 +102,7 @@ button {
 
 .icon {
     display: inline-block;
-    margin-left: 55px;
+    color: black;
 }
 
 .icon img{

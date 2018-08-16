@@ -22,7 +22,7 @@ export class WorkComponent implements OnInit, AfterViewInit {
   }
 
   growImage(event) {
-    this.renderer.addClass(this.elRef.nativeElement, 'grow')
+    this.renderer.addClass(event.target, 'grow')
   }
 
   ngOnInit() {

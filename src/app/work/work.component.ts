@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Renderer2 } from '@angular/core';
 import { Http } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class WorkComponent implements OnInit, AfterViewInit {
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private renderer: Renderer2, private elRef: ElementRef) { }
   wp_categoryDataImage: any = [];
   wp_categoryDataCategory: any = [];
   defaultImage = 'https://images.unsplash.com/photo-1468413922365-e3766a17da9e?dpr=2&auto=compress,format&fit=crop&w=1199&h=800&q=80';
@@ -19,6 +19,10 @@ export class WorkComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     window.scrollTo(0, 0);
+  }
+
+  growImage(event) {
+    this.renderer.addClass(this.elRef.nativeElement, 'grow')
   }
 
   ngOnInit() {

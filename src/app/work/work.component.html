@@ -5,7 +5,7 @@
       <div class="works-image" [defaultImage]="defaultImage" [lazyLoad]="categoryImage" [offset]="offset" *ngFor="let categoryImage of this.wp_categoryDataImage; let i = index;"
         [class.size-one]="i == 0 || i == 9 || i == 18" [class.size-two]="i == 1 || i == 10 || i == 19" [class.size-three]="i == 2 || i == 11 || i == 20"
         [class.size-four]="i == 3 || i == 12 || i == 21" [class.size-five]="i == 4 || i == 13 || i == 22" [class.size-six]="i == 5 || i == 14 || i == 23"
-        [class.size-seven]="i == 6 || i == 15 || i == 24" [class.size-eight]="i == 7 || i == 16 || i == 25" [class.size-nine]="i == 8 || i == 17 || i == 26">
+        [class.size-seven]="i == 6 || i == 15 || i == 24" [class.size-eight]="i == 7 || i == 16 || i == 25" [class.size-nine]="i == 8 || i == 17 || i == 26" (click)="growImage($event)">
         <span *ngFor="let category of this.wp_categoryDataCategory"> {{ category }}</span>
       </div>
     </div>

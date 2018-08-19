@@ -12,8 +12,8 @@ nav {
     animation-delay: 0.5s;
 }
 
-.nav-bkgd {
-  background-color: rgba(0, 0, 0, 0.8313725490196079);
+.nav-bkgd { 
+  background-color: #a79384;
   top: -11px;
   opacity: 05;
   padding-bottom: 21px;

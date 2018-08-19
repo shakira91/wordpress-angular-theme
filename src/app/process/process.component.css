@@ -16,6 +16,7 @@
     padding: 150px 66px;
     line-height: 2em;
     min-height: 645px;
+    width: 104%;
 }
 
 .ng-lazyloaded {

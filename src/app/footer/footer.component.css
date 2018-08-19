@@ -1,3 +1,15 @@
 footer {
     clear: both;
 }
+
+li {
+    list-style-type: none;
+    display: inline;
+    margin-left: 5px;
+}
+
+.footer section {
+    display: inline-block;
+    width: 33.3%;
+    text-align: center;
+}

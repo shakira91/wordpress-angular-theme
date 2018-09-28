@@ -25,19 +25,19 @@ export class FrontPageComponent implements OnInit {
   //     console.log(data)
   //   });
   // }
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    this.inview.checkIfInView(this.lifestyle, this.brand, this.sales);
-    if (this.inview.showLifeStyle) {
-      this.renderer.addClass(this.lifestyle.nativeElement, "in-view");
-    }
-    if (this.inview.showBrand) {
-      this.renderer.addClass(this.brand.nativeElement, "in-view");
-    }
-    if (this.inview.showSales) {
-      this.renderer.addClass(this.sales.nativeElement, "in-view");
-    }
-  }
+  // @HostListener("window:scroll", [])
+  // onWindowScroll() {
+  //   this.inview.checkIfInView(this.lifestyle, this.brand, this.sales);
+  //   if (this.inview.showLifeStyle) {
+  //     this.renderer.addClass(this.lifestyle.nativeElement, "in-view");
+  //   }
+  //   if (this.inview.showBrand) {
+  //     this.renderer.addClass(this.brand.nativeElement, "in-view");
+  //   }
+  //   if (this.inview.showSales) {
+  //     this.renderer.addClass(this.sales.nativeElement, "in-view");
+  //   }
+  // }
 
   ngOnInit() {
     this.http.get('http://dev.etherealcreative.com/wp-json/custom/v1/front-page').subscribe((data) => {
